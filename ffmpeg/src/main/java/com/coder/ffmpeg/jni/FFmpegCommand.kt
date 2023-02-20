@@ -64,6 +64,11 @@ object FFmpegCommand {
         return FFmpegCmd.instance?.runCmd(cmd, callBack)
     }
 
+    @JvmStatic
+    fun runCmd(cmd: String, callBack: IFFmpegCallBack?): Int? {
+        return FFmpegCmd.instance?.runCmd(cmd, callBack)
+    }
+
     /**
      * Execute FFmpeg commands.
      *
@@ -73,6 +78,12 @@ object FFmpegCommand {
     fun runCmd(cmd: Array<String?>): Int? {
         return FFmpegCmd.instance?.runCmd(cmd)
     }
+
+    @JvmStatic
+    fun runCmd(cmd: String): Int? {
+        return FFmpegCmd.instance?.runCmd(cmd)
+    }
+
 
     /**
      * Quit execute.

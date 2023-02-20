@@ -47,7 +47,9 @@ internal class FFmpegCmd private constructor() {
     fun runCmd(command: Array<String?>): Int {
         return run(getCommand(command))
     }
-
+    fun runCmd(command: String): Int {
+        return run( (command))
+    }
     /**
      * Provide ffmpeg command method to execute
      * @param command ffmeng command
@@ -57,6 +59,11 @@ internal class FFmpegCmd private constructor() {
     fun runCmd(command: Array<String?>, callBack: IFFmpegCallBack?): Int {
         mCallBacks.add(callBack)
         return run(getCommand(command))
+    }
+
+    fun runCmd(command: String, callBack: IFFmpegCallBack?): Int {
+        mCallBacks.add(callBack)
+        return run((command))
     }
 
     /**
